@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Keep theme overrides scoped to the page so the shared app shell stays predictable. */
+.theme-dark {
+  --dark-page: #061326;
+  --dark-surface: #0b203b;
+  --dark-surface-muted: #0d2947;
+  --dark-border: #1d4669;
+  --dark-text: #e7f5ff;
+  --dark-muted: #a8c2d6;
+  background: var(--dark-page);
+  color: var(--dark-text);
+}
+
+.theme-dark header,
+.theme-dark .bg-white {
+  background-color: var(--dark-surface) !important;
+  color: var(--dark-text);
+}
+
+.theme-dark .bg-\[\#f0f8fc\],
+.theme-dark .bg-\[\#f4f9fc\],
+.theme-dark .bg-\[\#f5f9fc\],
+.theme-dark .bg-\[\#f2f6fa\] {
+  background-color: var(--dark-page) !important;
+}
+
+.theme-dark .border-slate-100,
+.theme-dark .border-slate-200,
+.theme-dark .border-white {
+  border-color: var(--dark-border) !important;
+}
+
+.theme-dark .text-slate-900,
+.theme-dark .text-slate-800,
+.theme-dark .text-slate-700,
+.theme-dark .text-slate-600,
+.theme-dark .text-slate-500 {
+  color: var(--dark-muted) !important;
+}
+
+.theme-dark .text-\[\#08285a\],
+.theme-dark .text-\[\#062657\],
+.theme-dark .text-\[\#092c63\] {
+  color: var(--dark-text) !important;
+}
+
+.theme-dark input,
+.theme-dark textarea {
+  border-color: var(--dark-border);
+  background-color: var(--dark-surface-muted);
+  color: var(--dark-text);
+}
+
+.theme-dark input::placeholder,
+.theme-dark textarea::placeholder {
+  color: #7794aa;
+}
+
+.theme-dark .shadow-sm,
+.theme-dark .shadow-xl,
+.theme-dark [class*="shadow-[0_4px"] {
+  box-shadow: 0 8px 24px rgb(0 0 0 / 22%);
+}
+
+.theme-dark .bg-\[\#062657\] {
+  background-color: #041d3d !important;
+}
+
+.theme-dark .bg-\[\#c9e2ee\],
+.theme-dark .bg-cyan-100 {
+  background-color: #123c59 !important;
+}
