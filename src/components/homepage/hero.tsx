@@ -1,6 +1,7 @@
 'use client';
 
 import type { ReactNode } from 'react';
+import { CldImage } from 'next-cloudinary';
 
 type HeroIconName = 'calendar' | 'phone';
 
@@ -106,10 +107,14 @@ export function Hero({ onBookAppointment }: { onBookAppointment: () => void }) {
         </div>
         <div className="relative flex min-h-[300px] items-end justify-center lg:h-full lg:min-h-[360px]">
           <div className="absolute bottom-0 h-[90%] w-[76%] rounded-t-full bg-gradient-to-t from-[#c9dfec] to-transparent opacity-80" />
-          <img
-            src="https://res.cloudinary.com/eoanvi5b/image/upload/e_upscale/oardefault.jpg"
+          <CldImage
+            src="oardefault.jpg"
+            width={290}
+            height={365}
+            config={{ cloud: { cloudName: 'eoanvi5b' } }}
             alt="Dr. Anuj Arora, urologist"
             className="relative z-10 h-[290px] w-[230px] object-cover object-top mix-blend-multiply sm:h-[340px] sm:w-[270px] lg:h-[365px] lg:w-[290px]"
+            sizes="(max-width: 640px) 230px, (max-width: 1024px) 270px, 290px"
           />
           <div className="absolute top-1/2 right-0 z-20 w-44 -translate-y-1/2 rounded-lg border border-white bg-white/95 p-4 shadow-xl sm:right-3 lg:right-0">
             <p className="text-[8px] font-semibold text-slate-500">Associated With</p>
